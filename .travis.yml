@@ -3,4 +3,7 @@ rvm:
   - 2.3
   - 2.4
   - 2.5
+before_script:
+  - sudo apt-get update
+  - sudo apt-get install libavformat-dev libavfilter-dev libavdevice-dev ffmpeg imagemagick
 script: "bundle exec rspec spec --format progress"
