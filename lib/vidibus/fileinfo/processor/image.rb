@@ -18,6 +18,10 @@ module Vidibus
           %w[height width]
         end
 
+        def image?
+          true
+        end
+
         protected
 
         def bit
@@ -45,8 +49,8 @@ module Vidibus
         end
 
         def orientation
-          if match = @raw_metadata[/^\s*exif:Orientation:\s(\d+)/, 1]
-            match.to_i
+          if match = @raw_metadata[/^\s*Orientation:\s(.+)/, 1]
+            match
           end
         end
 
